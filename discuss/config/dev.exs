@@ -34,10 +34,5 @@ config :logger, :console, format: "[$level] $message\n"
 config :phoenix, :stacktrace_depth, 20
 
 # Configure your database
-config :discuss, Discuss.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "project-dbs",
-  password: "password",
-  database: "discuss_dev",
-  hostname: "localhost",
-  pool_size: 10
+# Using secrets import
+import_config "dev.secret.exs"
